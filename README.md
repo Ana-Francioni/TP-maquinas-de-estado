@@ -8,4 +8,4 @@
 
 ## Diagrama
 
-![./recursos/Diagrama.png](https://github.com/Ana-Francioni/Ana-Francioni/TP-maquinas-de-estado_Refrigeracion-de-un-automovil/commits/master/Recursos/Diagrama.png)
+![./recursos/Diagrama.png](https://github.com/Ana-Francioni/TP-maquinas-de-estado/blob/master/Recursos/Diagrama.png)
