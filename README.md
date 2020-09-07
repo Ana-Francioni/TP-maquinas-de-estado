@@ -4,6 +4,7 @@
 
 ## Memoria descriptiva
 
+
 Mi sistema representa un control del funcionamiento de la refrigeración de un automóvil. Las variables que determinan el pasaje de un estado a otro son la __temperatura__ y __volumen__ del líquido refrigerante. 
 
 - Temperatura: Es leída por un único sensor y determina el *ON/OFF* del electroventilador, con temperatura de encendido y de corte configurable. Mientras el sensor lea una temperatura menor a la temperatura de encendido, el electroventilador permanecerá *OFF*. Una vez que el líquido supere la temperatura de encendido, se activa la conexión a masa del electroventilador para que se encienda, y permanecerá *ON* mientras el líquido tenga una temperatura superior a la temperatura de corte. Una vez que el sensor lea una temperatura menor a la temperatura de corte, se cortará la conexión a masa, haciendo que el electroventilador vuelva al estado *OFF* y permanecerá en espera hasta que la temperatura vuelva a aumentar.
