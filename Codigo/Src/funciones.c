@@ -5,13 +5,13 @@ configuracion_t inicio (void){
     FILE *cfp;
     char cad[40], *clave, *val, i;
     char variables[4][20] = {"t_set_on", "t_set_off", "v_set", "dv"};
-    if ((cfp = fopen("conf.conf", "rb")) == NULL){
+    if ((cfp = fopen("../Conf/conf.conf", "rb")) == NULL){
         printf ("Error. No se encuentra el archivo.\n");
     }
     fgets (cad, 40, cfp);
     while (!feof(cfp)){
         clave = cad;
-        if ((*clave)!= '#' && strlen(clave) >= 0){
+        if ((*clave)!= '#' && strlen(clave) > 0){
             val = obt_clave(clave);
             for (i=0; i<4; i++){
                 if (!strcmp(clave, variables[i])){
@@ -45,10 +45,10 @@ configuracion_t inicio (void){
 
 char* obt_clave (char *clave){
     char i = 0;
-    while (*(clave+1) != ' '){
+    while (*(clave+i) != ' '){
         i++;
     }
-    *(clave + 1) = 0;
+    *(clave + i) = 0;
     return clave+i+1;
 } //modifica la cadena key para que solo contenga la clave y devuelve el puntero posicionado en donde se encuentra el valor.
 
