@@ -3,6 +3,7 @@
 #include <string.h>
 
 typedef enum {
+    
     espera = 0,
     encendido = 1
 
