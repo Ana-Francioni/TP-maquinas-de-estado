@@ -1,6 +1,7 @@
 #include "../Lib/mi_lib.h"
 
 configuracion_t inicio (void){ 
+    
     configuracion_t v;
     FILE *cfp;
     char cad[40], *clave, *val, i;

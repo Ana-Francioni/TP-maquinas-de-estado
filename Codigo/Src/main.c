@@ -1,6 +1,7 @@
 #include "../Src/funciones.c"
 
 int main (){
+    
     est_t estadoE = espera, estadoL = espera;
     configuracion_t variables;
     unsigned char luz=0, electrovent=0;
