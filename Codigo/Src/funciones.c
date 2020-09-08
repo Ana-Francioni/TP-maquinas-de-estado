@@ -1,7 +1,7 @@
 #include "../Lib/mi_lib.h"
 
 configuracion_t inicio (void){ 
-    
+
     configuracion_t v;
     FILE *cfp;
     char cad[40], *clave, *val, i;
@@ -36,10 +36,10 @@ configuracion_t inicio (void){
         }
         fgets (cad, 40, cfp);
     }
-    printf ("El limite máximo de temperatura del motor para comenzar a enfriar es de: %d \n", v.temperatura.t_set_on);
-    printf ("El limite mínimo de temperatura del motor para dejar de enfriar es de: %d \n", v.temperatura.t_set_off);
-    printf ("El limite mínimo de la cantidad de líquido en el deposito es de: %d L \n", v.temperatura.t_set_on);
-    printf ("El delta de volumen es de %f L \n", v.volumen.dv);
+    printf ("El limite maximo de temperatura del motor para comenzar a enfriar es de: %d grados \n", v.temperatura.t_set_on);
+    printf ("El limite minimo de temperatura del motor para dejar de enfriar es de: %d grados \n", v.temperatura.t_set_off);
+    printf ("El limite minimo de la cantidad de liquido en el deposito es de: %d L \n", v.temperatura.t_set_on);
+    printf ("El delta de volumen es de %.2f L \n", v.volumen.dv);
     fclose (cfp);
    return v; 
 } // lee el archivo de configuación e inicializa las variables
@@ -58,7 +58,7 @@ est_t f_espera_l (volumen_t v, unsigned char *p){
     unsigned char a;
     est_t estado;
     *p = 0;
-    printf ("Luz alerta apagada\n");
+    printf ("\nLuz alerta apagada\n");
     printf ("Ingrese volumen del deposito: \t");
     fflush (stdin);
     scanf ("%f", &v.vol_a);
@@ -79,7 +79,7 @@ est_t f_espera_l (volumen_t v, unsigned char *p){
 est_t f_encender_l (volumen_t v, unsigned char *p){
     est_t estado;
     *p = 1;
-    printf ("Luz alerta encendida\n");
+    printf ("\nLuz alerta encendida\n");
     printf ("Ingrese volumen del deposito: \t");
     fflush (stdin);
     scanf ("%f", &v.vol_a);
@@ -98,7 +98,7 @@ est_t f_encender_l (volumen_t v, unsigned char *p){
 est_t f_espera_e (temperatura_t t, unsigned char *p){
     est_t estado;
     *p = 0;
-    printf ("Electroventilador apagado\n");
+    printf ("\nElectroventilador apagado\n");
     printf ("Ingrese la temperatura del liquido: \t");
     fflush (stdin);
     scanf ("%d", &t.temp_a);
@@ -116,7 +116,7 @@ est_t f_espera_e (temperatura_t t, unsigned char *p){
 est_t f_encender_e (temperatura_t t, unsigned char *p){
     est_t estado;
     *p = 1;
-    printf ("Enfriando liquido \n");
+    printf ("\nEnfriando liquido \n");
     printf ("Ingrese la temperatura del liquido: \t");
     fflush (stdin);
     scanf ("%d", &t.temp_a);
