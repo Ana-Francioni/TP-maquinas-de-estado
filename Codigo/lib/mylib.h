@@ -1,3 +1,6 @@
+#ifndef __MYLIB_H_
+#define __MYLIB_H_
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -28,9 +31,19 @@ typedef struct
    volumen_t volumen;
 } configuracion_t;
 
+enum dconf{
+    TSETON = 0,
+    TSETOFF = 1,
+    VSET = 2,
+    DV = 3
+};
+
+
 configuracion_t inicio (void); // lee el archivo de configuación e inicializa las variables
 char* obt_clave (char *clave); //modifica la cadena key para que solo contenga la clave y devuelve el puntero posicionado en donde se encuentra el valor.
 est_t f_espera_l (volumen_t v, unsigned char *p); //apaga la luz de alerta y vuelve a leer el volumen del depósito para devolver el estado correspondiente.
 est_t f_encender_l (volumen_t v, unsigned char *p); //enciende la luz de alerta y vuelve a leer el volumen del depósito para devolver el estado correspondiente.
 est_t f_espera_e (temperatura_t t, unsigned char *p); //apaga el electroventilador y vuelve a leer el la temperatura para devolver el estado correspondiente.
 est_t f_encender_e (temperatura_t t, unsigned char *p); //enciende el electroventilador y vuelve a leer el la temperatura para devolver el estado correspondiente.
+
+#endif
